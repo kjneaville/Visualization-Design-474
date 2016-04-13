@@ -1,0 +1,22 @@
+body {
+	font-family: 'Open sans',verdana,arial,sans-serif;
+	text-align: center;
+	background: #4CA1AF; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #4CA1AF , #C4E0E5); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #4CA1AF , #C4E0E5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#First, #Second, #Third {
+   width: 100%;
+   margin-left: auto; 
+   margin-right: auto;
+}
+p {
+	text-align: left;
+	margin-left: 20%;
+	margin-right: 20%;
+	padding: 20px;
+}
+div {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}

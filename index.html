@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Antibiotic Visualization Design</title>
+<link rel="icon" href="http://d2.alternativeto.net/dist/icons/plotly_80810.png?width=64&height=64&mode=crop&upscale=false">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+
+<h1><b>Visualization Design</b></h1>
+<h3>Kenneth Neaville, INFO 474</h3>
+<h2>My First Visualization</h2>
+<!-- <iframe width="100%" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~kjneaville/9.embed"></iframe> -->
+<div id="First" style="width: 1100px;"></div><br>
+<p>
+    My first visualization is a 3D Scatterplot. Because we had three column of numeric data, I figured that each of these columns could be represented on its
+    own axis. This allows the viewer to see the relationship between the three columns based upon the position of the point. I used a logarithmic scale because
+    of the large differences between the data. Had I used a normal scale, the differences between small values would have been imperceptible.
+</p>
+<p>
+    I also encoded the gram straining (positive/negative) based upon color. Since this is a covariate variable, there are only two possible options, making it
+    very easy to distinguish. I chose blue to represent positive since bacteria stained dark blue or violet are gram-positive. Orange is a contrasting color
+    that would stand out to the eye for negative values. I think that this is also the main message of the visualization, since it easy to distinguish groups
+    of points. A viewer can see two small groups of orange points and a large group of all the blue points.
+</p>
+<p>
+    The use of a scatterplot was effective because the data points are independent. I considered using a 3D line plot at first, but then realized the lines
+    would have no real world meaning. One of the things that really makes this scatterplot effective is the ability to hover and points in order to obtain the
+    exact values. This would be impossible on visual estimation alone.
+</p>
+<p>
+    Overall this visualization provides the most information to the user, since all of the dataset is visually encoded in some way. The option to rotate, zoom,
+    and hover on points allows the user to explore the data in any way they want. A potential drawback is not about the visualization itself, but rather a
+    viewer's ability to interpret a three dimensional position. As all points are the same size, seeing a point does not immediately provide information until
+    the viewer compare it along all three axes. And because we are representing a three dimensional structure in two dimensions (on a screen) it may be
+    necessary for the viewer to rotate the scatterplot to know how deep or shallow a point actually is to the eye.
+</p>
+<h1>My Second Visualization</h1>
+<!-- <iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~kjneaville/4.embed"></iframe> -->
+<div id="Second" style="width: 1100px;"></div>
+<p>
+    My second visualization is a grouped bar chart. Each bacteria is its own category on the x-axis, and the three antibiotics used on each bacteria is
+    represented by its own bar. The colors are consistent throughout (in that purple always represents penicillin, yellow represents streptomycin, and orange
+    represents neomycin). In this way it is easy to compare within a category because bars are adjacent and measured on a common scale, but is just as easy to
+    compare across antibiotics since each of the antibiotics share the same color.
+</p>
+<p>
+I was sure to choose three colors that would all stand out but not overpower each other. I used the website    <a href="http://www.sessions.edu/color-calculator">http://www.sessions.edu/color-calculator</a> to choose three colors that were triadic on the color
+    wheel. I also made sure that they differed from the colors in the first visualization to keep the overall design of the webpage aesthetically pleasing.
+</p>
+<p>
+    Originally I had the categories ordered by which bacteria had the smallest minimum inhibitory concentrations; to illustrate, on the left would be all the
+    bacteria where penicillin had the lowest minimum inhibitory concentration, in the middle would be bacteria where streptomycin had the smallest, and on the
+    right would be where neomycin had the highest. Alternatively, my very first creation of the grouped bar graph (that was fully created on the Plotly online
+    creation service) ordered the bacteria by the<em> largest</em> antibiotic minimum inhibitory concentration. Although this was visually appealing (seeing
+    categories that share the same largest bar is a lot easier to distinguish than categories that share the same smallest bar) it was hard to reason why
+    someone would want to know the least effective antibiotic. In hindsight, I should have sorted the data by their lowest minimum inhibitory concentrations. I
+    could have used a separate set of three colors to distinguish bacteria as positive or negative as well. I did adjust the angle of the bacterial names so that they were fully viewable, but not overlapping.
+</p>
+<p>
+    Once again I used a logarithmic scale because the large range of the data. It would be impossible to compare numbers under one against number like 800
+    using a linear scale. Furthermore, two antibiotics with minimum inhibitory concentrations of 0.1 and 0.001 is very significant, but on a linear scale this
+    would be impossible to plot using a standard pixel display.
+</p>
+<p>
+    Personally I think that this visualization represents the antibiotic data at a very high level and is my favorite from this assignment. It can be viewed
+    statically and still provides easy to compare information about all three antibiotic minimum inhibitory concentrations.
+</p>
+<h1>My Third Visualization</h1>
+<!-- <iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~kjneaville/4.embed"></iframe> -->
+<div id="Third" style="width: 1200px;"></div>
+<p>
+    My third visualization used pie chart small multiples to compare the minimum inhibitory concentrations of bacteria, with each bacteria being its own pie
+    chart. The idea behind this visualization was to create a way to quickly judge the minimum inhibitory concentrations of the various antibiotics by their
+    concentration corresponding to the size of the pie that they consume. The charts can be examined more individually than in the second visualization because
+    it is hard to focus on multiple pie charts at the same time. Consequently, this visualization could be used to answer questions about individual bacteria,
+    and because each chart must be a full circle, a viewer can imagine that each chart represents the proportions of antibiotics required to prevent bacterial
+    growth in vitro.
+</p>
+<p>
+    One of the drawbacks of this chart is that it can be difficult to recognize values that are very small. If a user hovers over them they can find out more
+    information about that sector, but sometimes these sectors are only a pixel wide, making it difficult to trigger the hover event. A viewer is likely to be
+    most interested in the lowest of the minimum values (so that they can use an antibiotic they won't need a lot of) so the sectors that take over a large
+    percentage of the chart may distract from this inquiry. I also made sure that raw values were displayed instead of percentage of the pie, because in this
+    case the percentage has no real world meaning. 
+</p>
+<p>
+    A possible solution to this problem is to simply click on one of the antibiotics in the legend. This will remove that antibiotic from the pie chart and adjust the remaining sectors accordingly. For example, many of the graphs have penicillin as the dominant sector with the inability to analyze the other sectors because they are so small. Once we remove penicillin by clicking on it, however, we suddenly are able to see a more expanded view of the two remaining antibiotics.
+</p>
+<p>
+    Once again I used the same colors from the second visualization, not only to keep it consistent but also to avoid having to go through the process of
+    finding three colors that didn't compete or conflict with each other. This is similar to the second visualization in that each bacteria has its own
+    category/chart but within each the three antibiotics are visually encoded. I also did my best to make all pie charts the same size, which was difficult
+    because I had to manually calculate x and y domain values. Again, I could have used a separate set of three colors to encode the positive/negative values,
+    and I could have ordered them in a way other than the order that they were presented in the spreadsheet. I really like the use of small multiples and
+    believes that it breaks down a dataset into smaller subsets that may be individually examined.
+</p>
+
+<script src="plotly.js"></script>
+
+</body>
+</html>
